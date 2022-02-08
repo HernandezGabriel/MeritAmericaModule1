@@ -54,30 +54,45 @@ public class Exercises {
         owls are on the fence now?
         */
 
+		int owlsOnFence = 3;
+		int owlsJoined =2;
+		int totalOwls = owlsJoined+ owlsOnFence;
+
 
         /* Exercise 7
         7. 2 beavers were working on their home. 1 went for a swim. How many
         beavers are still working on their home?
         */
-
+		int beaversWorking=2;
+		int beaversSwimming=1;
+		int beaversRemaining=beaversWorking-beaversSwimming;
 
         /* Exercise 8
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
         many toucans in all?
         */
-
+		int toucansOnTree = 2;
+		int toucansJoining=1;
+		int totalToucans= toucansJoining+toucansOnTree;
 
         /* Exercise 9
         9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
         are there than nuts?
         */
 
+		int squirrels = 4;
+		int nuts=2;
+		int remainingSquirrels = squirrels-nuts;
 
         /* Exercise 10
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find?
         */
+		double quarter=.25;
+		double dime =.1;
+		double nickel = .05;
 
+		double money= quarter+dime+nickel+nickel;
 
         /* Exercise 11
         11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
@@ -86,18 +101,30 @@ public class Exercises {
         grade bake in all?
         */
 
+		int brierClass=18;
+		int macAdamsClass=20;
+		int flannery=17;
+		int total=brierClass+macAdamsClass+flannery;
 
         /* Exercise 12
         12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
         much did she spend in all for the two toys?
         */
 
+		double yoyoCost=.24;
+		double whistleCost=.14;
+		double totalSpent= yoyoCost+whistleCost;
 
         /* Exercise 13
         13. Mrs. Hilt made 5 Rice Krispies Treats. She used 8 large marshmallows
         and 10 mini marshmallows.How many marshmallows did she use
         altogether?
         */
+
+		int lgMarshrmallows=8;
+		int miniMarshmallows=10;
+		int totalMarshmallows=lgMarshrmallows + miniMarshmallows;
+
 
 
         /* Exercise 14
@@ -106,11 +133,21 @@ public class Exercises {
         did Mrs. Hilt's house have?
         */
 
+		int snowAtHouse=29;
+		int snowAtSchool=17;
+		int snowDifference= snowAtHouse-snowAtSchool;
+
+
 
         /* Exercise 15
         15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
         case. How much money does she have left?
         */
+
+		int hiltDollars =10;
+		int truck=3;
+		int pencil=2;
+		int totalHiltDollarsLeft= hiltDollars-truck-pencil;
 
 
         /* Exercise 16
@@ -118,23 +155,34 @@ public class Exercises {
         marbles does he have now?
         */
 
+		int joshMarbles=16;
+		int joshMarblesLost=7;
+		int joshMarblesLeft= joshMarbles-joshMarblesLost;
 
         /* Exercise 17
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
         */
-
+		int meganSeashells=19;
+		int meganRequiredSeashells=25;
+		int meganSeashellsLeftToFind= meganRequiredSeashells-meganSeashells;
 
         /* Exercise 18
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
 
+		int bradTotalBalloons = 17;
+		int bradRedBalloons=8;
+		int bradGreenBallons=bradTotalBalloons-bradRedBalloons;
+
 
         /* Exercise 19
         19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
         How many books are on the shelf now?
         */
+
+
 
 
         /* Exercise 20
