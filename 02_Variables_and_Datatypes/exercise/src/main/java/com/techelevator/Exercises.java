@@ -27,17 +27,27 @@ public class Exercises {
         many raccoons are left in the woods?
         */
 
+		int numberOfRacoons = 3;
+		int numberOfRacoonsLeaving = 2;
+		int racoonsLeft = numberOfRacoons - numberOfRacoonsLeaving;
+
 
         /* Exercise 4
         4. There are 5 flowers and 3 bees. How many less bees than flowers?
         */
+
+		int flowers = 5;
+		int bees= 3;
+		int extraFlowers = flowers-bees;
 
 
         /* Exercise 5
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now?
         */
-
+		int lonelyPigeon = 1;
+		int otherPigeon = 1;
+		int totalPigeon = lonelyPigeon+otherPigeon;
 
         /* Exercise 6
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
