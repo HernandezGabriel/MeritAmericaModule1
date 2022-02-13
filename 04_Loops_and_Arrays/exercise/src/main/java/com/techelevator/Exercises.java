@@ -10,6 +10,11 @@ public class Exercises {
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums) {
+
+		if(nums[0]==6){
+			return true;
+		}
+		if(nums[nums.length-1]==6){return true;}
 		return false;
 	}
 
@@ -21,15 +26,19 @@ public class Exercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
+		if (nums.length > 1) {
+			if (nums[0] == nums[nums.length - 1]) {
+				return true;
+			}
+		}
 		return false;
 	}
-
 	/*
 	 3. Return an int array length 3 containing the first 3 digits of pi, {3, 1, 4}.
 	 makePi() → [3, 1, 4]
 	 */
 	public int[] makePi() {
-		return new int[] {};
+		return new int[] {3,1,4};
 	}
 
 	/*
@@ -40,6 +49,8 @@ public class Exercises {
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
 	public boolean commonEnd(int[] a, int[] b) {
+		if(a[0]==b[0]){ return true;}
+		if(a[a.length-1]==b[b.length-1]){return true;}
 		return false;
 	}
 

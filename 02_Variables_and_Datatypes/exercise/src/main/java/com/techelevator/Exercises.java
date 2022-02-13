@@ -49,7 +49,7 @@ public class Exercises {
 		int otherPigeon = 1;
 		int totalPigeon = lonelyPigeon+otherPigeon;
 
-        /* Exercise 6
+        /* Exerc                       ise 6
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now?
         */
