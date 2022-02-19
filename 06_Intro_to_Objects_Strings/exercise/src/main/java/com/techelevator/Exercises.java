@@ -44,7 +44,7 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return out.subString(0,1)+word+out.subString(2,3);
+		return (out.substring(0,1)+word+out.substring(2,3));
 	}
 
 	/*
@@ -55,7 +55,9 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-	return str.subString(str.length-2,str.length-)+str.substring(str.length-2,str.length-1+str.substring(str.length-2,str.length-);
+	return (str.substring(str.length()-2,str.length()-1)
+			+str.substring(str.length()-2,str.length()-1)
+			+str.substring(str.length()-2,str.length()-1));
 
 
 
@@ -70,10 +72,11 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-		if(str.length==0) return "";
-		if(str.lengtht==1) return str;
-		if (str.length>1) return str.subString(0,1);
-)
+		if(str.length()==0) return "";
+		if(str.length()==1) return str;
+		if (str.length()>1) return str.substring(0,1);
+		else {return "";}
+
 	}
 
 	/*
@@ -83,7 +86,11 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return ;
+		if(str.length()%2==0) {
+			return str.substring(0,((str.length()/2)-1));
+		}
+		else return "";
+
 	}
 
 	/*
