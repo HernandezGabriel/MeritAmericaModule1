@@ -17,7 +17,6 @@ public class DecimalToBinary {
 			numberArray.add(sc2.nextInt());
 
 		}
-		System.out.println("Out");
 
 		int numberDecimal;
 		String numberBinary;
