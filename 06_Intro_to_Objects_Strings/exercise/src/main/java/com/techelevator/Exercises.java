@@ -1,6 +1,5 @@
 package com.techelevator;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 
@@ -58,7 +57,7 @@ public class Exercises {
 	 extraEnd("ab") → "ababab"
 	 extraEnd("Hi") → "HiHiHi"
 	 */
-	public String extraEnd(@NotNull String str) {
+	public String extraEnd( String str) {
 	return (str.substring(str.length()-2,str.length())
 			+str.substring(str.length()-2,str.length())
 			+str.substring(str.length()-2,str.length()));
