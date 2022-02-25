@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import com.sun.jdi.Value;
+
+import java.security.Key;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -243,7 +246,21 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
+		Map iftwoOrMoreMAP=new HashMap<String, Boolean>();
+		int counter=0;
+
+		for(String s : words){
+			for (String s2: words){
+				if(s.equals(s2)){
+					counter++;
+				}
+			}
+			iftwoOrMoreMAP.put(s,(counter>1));
+			counter=0;
+
+
+		}
+		return iftwoOrMoreMAP;
 	}
 
 	/*
@@ -258,8 +275,18 @@ public class Exercises {
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse,
 			Map<String, Integer> remoteWarehouse) {
-		return null;
+
+		Map combinedMap = new HashMap(mainWarehouse); // new combinedMap is equal to mainWH
+		remoteWarehouse.forEach((Key,Value) ->  //for each key value pair in remote warehouse we are going to
+												//COMBINEDMAP.merge
+				combinedMap.merge(Key,Value, (v1, v2) -> (int)v1+(int)v2)); //meaning "merging into combined map"
+																			// they key and then the values added
+								//formatting of merge method is what I don't quite understand.
+								//I was really surprised I got this one.
+		return combinedMap;
 	}
+
+
 
 	/*
 	 * Just when you thought it was safe to get back in the water --- last2Revisited!!!!
@@ -277,7 +304,25 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> last2Revisited(String[] words) {
-		return null;
+		Map last2 = new HashMap<String, Integer>();
+		String last2string;
+		int counter=0;
+		for(String s:words){
+			last2string=s.substring(s.length()-2);
+			s=s.substring(0,s.length()-2);
+			//seperated first part from last 2 chars
+
+			for (int i = 0; i < s.length()-1; i++) {
+				if (s.substring(i,i+2).equals(last2string)){
+					counter++;
+				}
+			}
+			last2.put(s+last2string,counter);
+			counter=0;
+		}
+		return last2;
+
+
 	}
 
 }
