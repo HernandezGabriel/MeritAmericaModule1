@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class Exercises {
@@ -34,7 +35,25 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		Map animalGroup = new HashMap<>();
+		animalGroup.put("RHINO", "Crash");
+		animalGroup.put("ELEPHANT","Herd");
+		animalGroup.put("GIRAFFE","Tower");
+		animalGroup.put("LION","Pride");
+		animalGroup.put("CROW","Murder");
+		animalGroup.put("PIGEON","Kit");
+		animalGroup.put("FLAMINGO","Pat");
+		animalGroup.put("DEER","Herd");
+		animalGroup.put("DOG","Pack");
+		animalGroup.put("CROCODILE","Float");
+
+		if (animalName==null){
+			return "unknown";
+		}
+		if (animalGroup.containsKey(animalName.toUpperCase())){
+			return (String)animalGroup.get(animalName.toUpperCase());
+		}
+		else return "unknown";
 	}
 
 	/*
@@ -60,7 +79,21 @@ public class Exercises {
 	 *
 	 */
 	public double isItOnSale(String itemNumber) {
-		return -1.0;
+		Map discounts = new HashMap<>();
+		discounts.put("KITCHEN4001",.20);
+		discounts.put("GARAGE1070",.15);
+		discounts.put("LIVINGROOM",.10);
+		discounts.put("KITCHEN6073",.40);
+		discounts.put("BEDROOM3434",.60);
+		discounts.put("BATH0073",.15);
+		if (itemNumber==null){
+			return 0.00;
+		}
+		if (discounts.containsKey(itemNumber.toUpperCase())){
+			return (double)discounts.get(itemNumber.toUpperCase());
+		}
+		else return 0.00;
+
 	}
 
 	/*
@@ -74,7 +107,30 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		if(peterPaul.get("Peter")>0 && peterPaul.get("Paul")<1000){
+			int half;
+			int paul;
+
+			if (peterPaul.get("Peter")%2==1){ //UNEVEN **peter keeps the penny
+				 half= (int) (((peterPaul.get("Peter")-1)/2)); //take off the penny to do the division
+				 paul=peterPaul.get("Paul");
+
+				peterPaul.put("Peter", half+1);           //peter keeps penny
+				peterPaul.put("Paul", paul+half);
+
+			}
+			else{
+				 half= (int) (((peterPaul.get("Peter"))/2));
+				 paul=peterPaul.get("Paul");
+
+				peterPaul.put("Peter", half);
+				peterPaul.put("Paul", paul+half);
+			}
+
+
+		}
+
+		return peterPaul;
 	}
 
 	/*
@@ -87,7 +143,19 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+
+		if(peterPaul.get("Peter")>=5000&&peterPaul.get("Paul")>=10000){
+			double peterPaulContributionCombined=.25*peterPaul.get("Peter")+.25*peterPaul.get("Paul");
+
+			peterPaul.put("PeterPaulPartnership",(int)peterPaulContributionCombined);
+
+			int peterMinusContribution=peterPaul.get("Peter")- (int) (peterPaul.get("Peter")*.25);
+			int paulMinusContribution=peterPaul.get("Paul")- (int) (peterPaul.get("Paul")*.25);
+			peterPaul.put("Peter",peterMinusContribution);
+			peterPaul.put("Paul",paulMinusContribution);
+		}
+
+		return peterPaul;
 	}
 
 	/*
@@ -99,7 +167,12 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		Map begAndEnd = new HashMap<>();
+		for(String s :words){
+			begAndEnd.put(s.substring(0,1),s.substring(s.length()-1));
+
+		}
+		return begAndEnd;
 	}
 
 	/*
@@ -115,7 +188,20 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map wrdCount=new HashMap<String,Integer>();
+		int wordCounter=0;
+		String word="";
+		for(int i =0; i< words.length;i++){
+			word=words[i];
+			for (int x=0;x< words.length;x++){
+				if (word.equals(words[x])){
+					wordCounter++;
+				}
+			}
+			wrdCount.put(word,wordCounter);
+			wordCounter=0;
+		}
+		return wrdCount;
 	}
 
 	/*
@@ -130,7 +216,21 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		Map intCount = new HashMap<Integer,Integer>();
+		int integerBeingCounted=0;
+		int integerCounter=0;
+
+		for(int i:ints){
+			integerBeingCounted=i;
+			for(int x: ints){
+				if(integerBeingCounted==x){
+					integerCounter++;
+				}
+			}
+			intCount.put(integerBeingCounted,integerCounter);
+			integerCounter=0;
+		}
+		return intCount;
 	}
 
 	/*
