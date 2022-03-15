@@ -8,7 +8,10 @@ public class HelloWorld {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello!");
+        String s = "Hi";
+        String a =s.substring(0,2);
+
+        System.out.println(a);
         System.out.println("Today is " + LocalDate.now());
         System.out.println("The current time is " + LocalTime.now());
 
