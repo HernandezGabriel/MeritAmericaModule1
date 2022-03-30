@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class BookConverter {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         /*
          * This book-converter program opens a file that was downloaded from https://www.gutenberg.org/,
          * and converts all its text to uppercase.
@@ -36,21 +36,30 @@ public class BookConverter {
         /*
         Step 2: Open a file for writing the converted text into it
          */
-        try (Scanner fileInput = new Scanner(bookFile)) {
-            // Loop until the end of file is reached
-            while (fileInput.hasNextLine()) {
+
+        // Create a File object for the output file
+        File convertedFile = getConvertedFile(bookFile);
+// Open both the input and output files.
+
+        try(
+            Scanner fileInput= new Scanner(bookFile);
+            PrintWriter dataOutput = new PrintWriter(convertedFile)
+        ){
+            while (fileInput.hasNextLine()){
                 // Read the next line into 'lineOfText'
                 String lineOfText = fileInput.nextLine();
                 lineCount++;
-
                 // Print the file to the user
-                System.out.println(lineOfText);
+                dataOutput.println(lineOfText.toUpperCase());
+
+
+
             }
-        } catch (FileNotFoundException e) {
+        }catch (FileNotFoundException e) {
             // Could not find the file at the specified path.
             System.out.println("The file was not found: " + bookFile.getAbsolutePath());
-            return;
-        }
+            return; }
+
 
         // Tell the user what happened.
         String message = "Displayed " + lineCount +
@@ -63,6 +72,15 @@ public class BookConverter {
         throughout history. If the file doesn't exist it will be created. If it already exists, its
         contents will be preserved, and the lines written here will be appended to what was already there.
          */
+        String auditPath = "BookConverter.log";
+        File logFile = new File(auditPath);
+// Using a FileOutputStream with true passed into the constructor opens the file for append.
+        try (PrintWriter log = new PrintWriter(new FileOutputStream(logFile, true))) {
+            log.println(message);
+        } catch (FileNotFoundException e) {
+            System.out.println("*** Unable to open log file: " + logFile.getAbsolutePath());
+        }
+
 
     }
 
